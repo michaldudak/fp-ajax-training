@@ -1,0 +1,177 @@
+﻿body
+{
+	background: #FFF;
+	color: #333;
+	font-size: 15pt;
+	font-family: Lato, Segoe UI, sans-serif;
+	line-height: 1.2;
+}
+
+.impress-enabled
+{
+	font-size: 30pt;
+}
+
+a
+{
+	color: #0ac68c;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #088a62;
+}
+
+#page
+{
+	width: 960px;
+	margin: 10px auto;
+}
+
+.step
+{
+	text-align: center;
+	width: 900px;
+	opacity: 0.15;
+	-webkit-transition: opacity 1s;
+	-moz-transition:    opacity 1s;
+	-ms-transition:     opacity 1s;
+	-o-transition:      opacity 1s;
+	transition:         opacity 1s;
+	
+}
+
+.step.active { opacity: 1 }
+
+table
+{
+	width: 100%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	 box-sizing: border-box;
+	border: none;
+	border-collapse: collapse;
+	margin: 20px 0 30px;
+}
+
+td, th
+{
+	border: 1px #bbb;
+	border-style: solid none;
+	padding: 8px 4px;
+	text-align: center;
+}
+
+th
+{
+	font-size: 120%;
+	font-weight: bold;
+}
+
+td:first-child,
+th:first-child
+{
+	width: 99%;
+	text-align: left;
+}
+
+ul
+{
+	text-align: left;
+}
+
+h1
+{
+	font-weight: bold;
+	font-size: 2em;
+}
+
+h2
+{
+	font-weight: bold;
+	font-size: 1.75em;
+}
+
+button
+{
+	font-size: inherit;
+	border: none;
+	border-top: 8px solid #bfe1d6;
+	background: #0ac68c;
+	padding: 5px;
+	cursor: pointer;
+	color: #FFF;
+	font-family: inherit;
+	font-weight: bold;
+}
+
+.impress-enabled button
+{
+	padding: 20pt;
+}
+
+button:hover
+{
+	border-top: 8px solid #07855e;
+}
+
+button:active
+{
+	position: relative;
+	top: 2px;
+	border-top: 8px solid #034933;
+}
+
+table button
+{
+	background: none repeat scroll 0 0 #EEEEEE;
+	border-radius: 6px;
+	box-shadow: none;
+	margin: 3px;
+	padding: 3px;
+	width: 35px;
+	color: #333333;
+}
+
+pre
+{
+	text-align: left;
+}
+
+pre, code {
+	color: #063;
+}
+
+.api
+{
+	font-size: 18pt;
+}
+
+input[type=text]
+{
+	font-family: inherit;
+	font-size: inherit;
+	border: none;
+	background: #fff;
+	padding: 4px;
+	width: 300px;
+	border-bottom: 1px solid #0ac68c;
+	border-left: 3px solid #0ac68c;
+}
+
+.playground {
+	width: 960px;
+	margin: 50px auto;
+	text-align: center;
+}
+
+.playground button {
+	padding: 20px;
+}
+
+.playground #results {
+	border: 1px solid #0ac68c;
+	padding: 40px;
+	margin-top: 50px;
+}
