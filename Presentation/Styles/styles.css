@@ -1,169 +1,151 @@
-﻿body
-{
+﻿body {
 	background: #FFF;
 	color: #333;
-	font-size: 15pt;
 	font-family: Lato, Segoe UI, sans-serif;
+	font-size: 15pt;
 	line-height: 1.2;
 }
 
-.impress-enabled
-{
+.impress-enabled {
 	font-size: 30pt;
 }
 
-a
-{
+a {
 	color: #0ac68c;
 	text-decoration: none;
 }
 
-a:hover
-{
+a:hover {
 	color: #088a62;
 }
 
-#page
-{
-	width: 960px;
+#page {
 	margin: 10px auto;
+	width: 960px;
 }
 
-.step
-{
-	text-align: center;
-	width: 900px;
-	opacity: 0.15;
+.step {
+	-moz-transition: opacity 1s;
+	-ms-transition: opacity 1s;
+	-o-transition: opacity 1s;
 	-webkit-transition: opacity 1s;
-	-moz-transition:    opacity 1s;
-	-ms-transition:     opacity 1s;
-	-o-transition:      opacity 1s;
-	transition:         opacity 1s;
-	
+	opacity: 0.15;
+	text-align: center;
+	transition: opacity 1s;
+	width: 900px;	
 }
 
-.step.active { opacity: 1 }
+.step.active {
+	opacity: 1
+}
 
-table
-{
-	width: 100%;
+table {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	 box-sizing: border-box;
 	border: none;
 	border-collapse: collapse;
+	box-sizing: border-box;
 	margin: 20px 0 30px;
+	width: 100%;
 }
 
-td, th
-{
+td,
+th {
 	border: 1px #bbb;
 	border-style: solid none;
 	padding: 8px 4px;
 	text-align: center;
 }
 
-th
-{
+th {
 	font-size: 120%;
 	font-weight: bold;
 }
 
 td:first-child,
-th:first-child
-{
+th:first-child {
+	text-align: left;
 	width: 99%;
+}
+
+ul {
 	text-align: left;
 }
 
-ul
-{
-	text-align: left;
-}
-
-h1
-{
-	font-weight: bold;
+h1 {
 	font-size: 2em;
-}
-
-h2
-{
 	font-weight: bold;
-	font-size: 1.75em;
 }
 
-button
-{
-	font-size: inherit;
+h2 {
+	font-size: 1.75em;
+	font-weight: bold;
+}
+
+button {
+	background: #0ac68c;
 	border: none;
 	border-top: 8px solid #bfe1d6;
-	background: #0ac68c;
-	padding: 5px;
-	cursor: pointer;
 	color: #FFF;
+	cursor: pointer;
 	font-family: inherit;
+	font-size: inherit;
 	font-weight: bold;
+	padding: 5px;
 }
 
-.impress-enabled button
-{
+.impress-enabled button {
 	padding: 20pt;
 }
 
-button:hover
-{
+button:hover {
 	border-top: 8px solid #07855e;
 }
 
-button:active
-{
+button:active {
+	border-top: 8px solid #034933;
 	position: relative;
 	top: 2px;
-	border-top: 8px solid #034933;
 }
 
-table button
-{
+table button {
 	background: none repeat scroll 0 0 #EEEEEE;
 	border-radius: 6px;
 	box-shadow: none;
+	color: #333333;
 	margin: 3px;
 	padding: 3px;
 	width: 35px;
-	color: #333333;
 }
 
-pre
-{
+pre {
 	text-align: left;
 }
 
-pre, code {
+pre,
+code {
 	color: #063;
 }
 
-.api
-{
+.api {
 	font-size: 18pt;
 }
 
-input[type=text]
-{
-	font-family: inherit;
-	font-size: inherit;
-	border: none;
+input[type=text] {
 	background: #fff;
-	padding: 4px;
-	width: 300px;
+	border: none;
 	border-bottom: 1px solid #0ac68c;
 	border-left: 3px solid #0ac68c;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 4px;
+	width: 300px;
 }
 
 .playground {
-	width: 960px;
 	margin: 50px auto;
 	text-align: center;
+	width: 960px;
 }
 
 .playground button {
@@ -172,6 +154,6 @@ input[type=text]
 
 .playground #results {
 	border: 1px solid #0ac68c;
-	padding: 40px;
 	margin-top: 50px;
+	padding: 40px;
 }

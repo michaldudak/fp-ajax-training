@@ -15,15 +15,15 @@ namespace AjaxWorkshop
 	public class Playground : WebService
 	{
 		[WebMethod]
-		public string PlayWithParams(string firstName, string lastName)
-		{
-			return string.Format("Hello, {0} {1}!", firstName, lastName);
-		}
-
-		[WebMethod]
 		public Person PlayWithoutParams()
 		{
 			return new Person { FirstName = "Sheldon", LastName = "Cooper" };
+		}
+		
+		[WebMethod]
+		public string PlayWithParams(string firstName, string lastName)
+		{
+			return string.Format("Hello, {0} {1}!", firstName, lastName);
 		}
 
 		[WebMethod]
