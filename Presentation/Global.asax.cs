@@ -10,6 +10,8 @@ namespace AjaxWorkshop
 	{
 		protected void Application_Start(object sender, EventArgs e)
 		{
+			RouteTable.Routes.Ignore("{service}.asmx/{*whatever}");
+
 			RouteTable.Routes.MapHttpRoute("ApiDefault", "API/{controller}");
 			RouteTable.Routes.MapHttpRoute("ApiWithAction", "API/{controller}/{action}");
 			RouteTable.Routes.MapRoute("MvcDefault", "{controller}/{action}", new { action = "Index" });

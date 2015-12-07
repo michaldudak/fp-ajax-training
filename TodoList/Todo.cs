@@ -7,6 +7,10 @@ namespace TodoList
 	/// </summary>
 	public sealed class Todo
 	{
+		internal Todo()
+		{
+		}
+
 		internal Todo(string description)
 		{
 			Id = Guid.NewGuid();

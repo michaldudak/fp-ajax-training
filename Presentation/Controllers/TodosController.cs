@@ -8,30 +8,30 @@ namespace AjaxWorkshop.Controllers
 {
 	public class TodosController : Controller
 	{
-		private readonly TodoRepository todoRepository = new TodoRepository();
+		private readonly TodoRepository _todoRepository = new TodoRepository();
 		
 		public ActionResult All()
 		{
-			return Json(this.todoRepository.GetTodos(), JsonRequestBehavior.AllowGet);
+			return Json(_todoRepository.GetAll(), JsonRequestBehavior.AllowGet);
 		}
 
 		public ActionResult Create(string description)
 		{
-			return Json(this.todoRepository.AddTodo(description));
+			return Json(_todoRepository.Add(description));
 		}
 
 		public ActionResult Delete([FromBody] Guid id)
 		{
-			this.todoRepository.DeleteTodo(id);
+			_todoRepository.Remove(id);
 			return new EmptyResult();
 		}
 
 		public ActionResult ToggleCompletionStatus(Guid id, bool isCompleted)
 		{
-			var todo = todoRepository.GetTodo(id);
+			var todo = _todoRepository.Get(id);
 			todo.IsCompleted = isCompleted;
 			
-			todoRepository.UpdateTodo(todo);
+			_todoRepository.Update(todo);
 
 			return new EmptyResult();
 		}
