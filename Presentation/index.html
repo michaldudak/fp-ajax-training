@@ -1,13 +1,12 @@
 ﻿<!DOCTYPE html>
-
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>AJAX</title>
-		<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
-		<link href="Styles/styles.css" rel="stylesheet" />
-		<meta name="author" content="Michał Dudak" />
-	</head>
+<head>
+	<meta charset="utf-8" />
+	<title>AJAX</title>
+	<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+	<link href="Styles/styles.css" rel="stylesheet" />
+	<meta name="author" content="Michał Dudak" />
+</head>
 <body>
 	<div id="impress">
 		<div id="title" class="step" data-x="3000" data-y="-4000" data-z="-1000" data-scale="6">
@@ -59,7 +58,7 @@
 		</div>
 
 		<div class="step" data-x="6000">
-			<p>Nope.</p>
+			<p>Insignificant.</p>
 		</div>
 
 		<div class="step" data-x="7500">
@@ -82,7 +81,7 @@ request.onreadystatechange = function() {
   }
 }
 request.send();
-					</pre>
+				</pre>
 			</p>
 		</div>
 
@@ -112,7 +111,7 @@ $.ajax({
   },
   error: console.log
 });
-				</pre>
+			</pre>
 		</div>
 
 		<div class="step" data-x="9000" data-y="2000">
@@ -152,6 +151,7 @@ $.ajax({
 				<li>HTTP Handlers</li>
 				<li>MVC actions</li>
 				<li>WebAPI</li>
+				<li>...</li>
 			</ul>
 		</div>
 
@@ -228,7 +228,7 @@ $.ajax({
 					</ul>
 				</li>
 				<li>
-					ASP.NET security features
+					ASP.NET Web Services security features
 					<ul>
 						<li>GET disabled by default (POST requests are safer)</li>
 						<li>wrapper 'd' object (>= .NET 3.5)</li>
@@ -248,11 +248,11 @@ $.ajax({
 				<li>
 					<code>TodoRepository</code>
 					<ul>
-						<li><code>IEnuberable&lt;Todo&gt; GetAllTodos()</code>: Gets all defined todos</li>
-						<li><code>Task GetTodo(Guid id)</code>: Gets a todo by ID</li>
-						<li><code>Task AddTodo(string description)</code>: Creates a new todo</li>
-						<li><code>void DeleteTodo(Guid id)</code>: Deletes a todo from the list</li>
-						<li><code>void UpdateTodo(Todo todo)</code>: Updates a todo</li>
+						<li><code>IEnumerable&lt;Todo&gt; GetAll()</code>: Gets all defined todos</li>
+						<li><code>Task Get(Guid id)</code>: Gets a todo by ID</li>
+						<li><code>Task Add(string description)</code>: Creates a new todo</li>
+						<li><code>void Remove(Guid id)</code>: Deletes a todo from the list</li>
+						<li><code>void Update(Todo todo)</code>: Updates a todo</li>
 					</ul>
 				</li>
 				<li>
@@ -273,34 +273,32 @@ $.ajax({
 	<script src="Scripts/jquery.js"></script>
 	<script src="Scripts/impress.js"></script>
 	<script>
-			impress().init();
-	</script>
+		impress().init();
 
-	<script type="text/javascript">
-			$("#btnLoadExampleContent").click(function() {
-				$("#ajaxExampleContent").load("/staticContent.html");
+		$("#btnLoadExampleContent").click(function() {
+			$("#ajaxExampleContent").load("/staticContent.html");
+		});
+
+		$("#btnSendRequest").click(function() {
+			$.ajax("/staticContent.html");
+		});
+
+		$(".ajaxSample button").click(function() {
+			var button = $(this);
+			var url = button.data("url");
+			var resultPanel = button.closest(".ajaxSample").find(".result");
+
+			$.ajax({
+				url: url,
+				type: "POST",
+				data: "{}",
+				contentType: "application/json; charset=utf-8",
+				dataType: "json"
+			}).done(function(response) {
+				var data = response.d || response;
+				resultPanel.text(data);
 			});
-
-			$("#btnSendRequest").click(function() {
-				$.ajax("/staticContent.html");
-			});
-
-			$(".ajaxSample button").click(function() {
-				var button = $(this);
-				var url = button.data("url");
-				var resultPanel = button.closest(".ajaxSample").find(".result");
-
-				$.ajax({
-					url: url,
-					type: "POST",
-					data: "{}",
-					contentType: "application/json; charset=utf-8",
-					dataType: "json"
-				}).done(function(response) {
-					var data = response.d || response;
-					resultPanel.text(data);
-				});
-			});
+		});
 	</script>
 </body>
 </html>
